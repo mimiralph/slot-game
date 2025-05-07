@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca; min-height: 16.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Fun Question Slot Machine&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Apply the game font */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Press Start 2P', cursive;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #1a1a2e; /* Dark blue background */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #e0e0e0; /* Light text */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>min-height: 100vh;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Style the slot machine container */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.slot-machine {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #162447; /* Darker blue */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 8px solid #fca311; /* Orange border */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 1.5rem; /* More rounded */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 90%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 700px; /* Keep slightly wider width */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Style the reels */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.reels {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: space-around; /* Space out reels */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>gap: 1rem; /* Gap between reels */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex-wrap: wrap; /* Allow wrapping on smaller screens */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Style individual reel */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.reel {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #0f3460; /* Even darker blue */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 4px solid #e94560; /* Pinkish border */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 1rem; /* Rounded */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1.5rem 1rem; /* Padding */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>min-height: 120px; /* Keep increased min-height */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.9rem; /* Keep slightly smaller font */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #ffffff; /* White text */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex: 1; /* Allow reels to grow */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>min-width: 150px; /* Keep increased min-width */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden; /* Hide overflow */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-overflow: ellipsis; /* Add ellipsis if text is too long */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>white-space: normal; /* Allow text wrapping */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>word-wrap: break-word; /* Break long words */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: background-color 0.3s ease; /* Smooth transition */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.3; /* Adjust line height */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Style the spin button */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.spin-button {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Press Start 2P', cursive; /* Ensure font */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, #fca311, #e94560); /* Gradient */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1rem 2rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 0.75rem; /* Rounded */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease; /* Smooth transitions */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), inset 0 -3px 5px rgba(0,0,0,0.2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-shadow: 1px 1px 2px rgba(0,0,0,0.5);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 1rem; /* Space above result */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem; /* Space below button */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.spin-button:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(-3px); /* Lift effect */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4), inset 0 -3px 5px rgba(0,0,0,0.2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.spin-button:active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(1px); /* Push down effect */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), inset 0 -2px 3px rgba(0,0,0,0.2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Style the result area */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.result-question {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #1f4068; /* Slightly lighter blue */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px dashed #fca311; /* Dashed orange border */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 0.75rem; /* Rounded */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 1.5rem; /* More padding */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 1.5rem; /* Space above result */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>min-height: 80px; /* Keep increased min height */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1rem; /* Keep slightly larger font for result */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #e0fbfc; /* Light cyan text */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.5; /* Better line spacing */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Reel animation */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.reel.spinning {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>animation: reelSpin 0.5s ease-in-out;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@keyframes reelSpin {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>0% { transform: translateY(-10px); opacity: 0.5; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>50% { transform: translateY(10px); opacity: 0.5; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>100% { transform: translateY(0); opacity: 1; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Responsive adjustments */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) { /* Adjusted breakpoint */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>.slot-machine {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>width: 95%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.reels {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>gap: 0.75rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>.reel {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>font-size: 0.8rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>min-height: 100px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>min-width: 120px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>.result-question {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>font-size: 0.9rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">             </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@media (max-width: 640px) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.slot-machine {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>padding: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.reels {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>flex-direction: column; /* Stack reels vertically */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>gap: 0.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.reel {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>min-height: 80px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>padding: 1rem 0.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.spin-button {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>font-size: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>padding: 0.75rem 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.result-question {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>font-size: 0.85rem; /* Adjust font size */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>padding: 1rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;!-- HEAD PART IS THE SAME UNTIL &lt;/style&gt; --&gt;</span></p>
+<p class="p1"><span class="s1">&lt;!-- Then replace your BODY and SCRIPT with the following --&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="slot-machine"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1 class="text-2xl sm:text-3xl font-bold mb-6 text-center text-[#fca311]"&gt;Fun Question Slot Machine&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="reels"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="reel-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="reel1" class="reel"&gt;Imagine if...&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="reroll('reel1')" class="text-sm mt-2 text-[#fca311] underline"&gt;Reroll&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="reel-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="reel2" class="reel"&gt;A certain thing...&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="reroll('reel2')" class="text-sm mt-2 text-[#fca311] underline"&gt;Reroll&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="reel-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="reel3" class="reel"&gt;Had a funny twist...&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="reroll('reel3')" class="text-sm mt-2 text-[#fca311] underline"&gt;Reroll&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="reel-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="reel4" class="reel"&gt;...in zero gravity!&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="reroll('reel4')" class="text-sm mt-2 text-[#fca311] underline"&gt;Reroll&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button id="spinButton" class="spin-button mt-4"&gt;Spin for Fun!&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button onclick="surpriseMe()" class="spin-button mt-2 bg-[#e94560] hover:bg-[#d13b52]"&gt;Surprise Me&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="result-question"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p id="result"&gt;Your fun question will appear here...&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button onclick="sendToGemini()" class="mt-4 px-4 py-2 rounded bg-[#0f3460] text-white font-bold hover:bg-[#1f4068]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>🔮 Ask Gemini</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const questionStarters = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>"Imagine if", "What would happen if", "Describe a world where", "If you could ask", "Pretend that", "Suppose"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const subjects = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>"penguins", "time-traveling sloths", "sentient furniture", "ghosts of forgotten memes", "AI poets", "talking books"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const contexts = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>"formed a rock band?", "ran for president?", "became fashion designers?", "turned invisible?", "spoke only in emojis?"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const twists = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>"in space", "during a thunderstorm", "at a tea party", "inside a dream", "on live TV", "while upside down"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function getRandomItem(arr) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return arr[Math.floor(Math.random() * arr.length)];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function animateReel(id) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const el = document.getElementById(id);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>el.classList.add('spinning');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>setTimeout(() =&gt; el.classList.remove('spinning'), 500);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function reroll(reelId) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const map = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>'reel1': questionStarters,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>'reel2': subjects,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>'reel3': contexts,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>'reel4': twists</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const newText = getRandomItem(map[reelId]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById(reelId).textContent = newText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>animateReel(reelId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>updateResult();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function spinReels() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('reel1').textContent = getRandomItem(questionStarters);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('reel2').textContent = getRandomItem(subjects);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('reel3').textContent = getRandomItem(contexts);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('reel4').textContent = getRandomItem(twists);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>['reel1','reel2','reel3','reel4'].forEach(animateReel);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>updateResult();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function updateResult() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const q = `${reel1.textContent} ${reel2.textContent} ${reel3.textContent} ${reel4.textContent}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('result').textContent = q;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function surpriseMe() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>spinReels();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>updateResult();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function sendToGemini() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const prompt = document.getElementById('result').textContent;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const url = `https://gemini.google.com/app?prompt=${encodeURIComponent(prompt)}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>window.open(url, '_blank');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// Event listener</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById('spinButton').addEventListener('click', spinReels);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>
